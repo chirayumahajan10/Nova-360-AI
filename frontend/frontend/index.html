@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f9ff" />
+  <title>Nova 360 AI — Your workspace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>✦</span><b>n</b></div>
+        <div class="brand-name">Nova 360 <span>Ai</span></div>
+        <button class="icon-button close-sidebar" id="closeSidebar" aria-label="Close sidebar">×</button>
+      </div>
+
+      <button class="new-chat" id="newChat"><span class="plus">＋</span> New chat <kbd>Ctrl K</kbd></button>
+      <button class="side-link" id="searchToggle"><span class="side-icon">⌕</span> Search chats</button>
+      <button class="side-link" id="libraryBtn"><span class="side-icon">▤</span> Library</button>
+
+      <div class="side-section">
+        <div class="section-heading">RECENT CHATS <button id="clearChats" title="Clear recent chats">···</button></div>
+        <div id="chatList" class="chat-list">
+          <button class="chat-item active" data-chat="Meeting summary"><span>◷</span><span class="chat-title">Meeting summary</span></button>
+          <button class="chat-item" data-chat="Team report"><span>◷</span><span class="chat-title">Team report</span></button>
+          <button class="chat-item" data-chat="Email drafting"><span>◷</span><span class="chat-title">Email drafting</span></button>
+          <button class="chat-item" data-chat="Task overview"><span>◷</span><span class="chat-title">Task overview</span></button>
+          <button class="chat-item" data-chat="Document translation"><span>◷</span><span class="chat-title">Document translation</span></button>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-icon">✦</div>
+          <div><strong>Make more with Nova 360 AI</strong><p>Your ideas, one conversation away.</p></div>
+          <span class="tiny-arrow">↗</span>
+        </div>
+        <button class="profile side-link" id="profileBtn">
+          <span class="avatar">P</span><span class="profile-copy"><strong>Pratik
+          </strong><small>Personal workspace</small></span><span class="profile-dots">···</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" aria-label="Open sidebar">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="pageTitle">New chat</strong></div>
+        <div class="top-actions"><span class="status-dot"></span><span class="online-label">AI workspace</span><button class="icon-button" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">◐</button></div>
+      </header>
+
+      <section class="workspace" id="workspace">
+        <div class="welcome" id="welcome">
+          <div class="hero-logo"><span>✦</span><b>n</b></div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR CREATIVE AI PARTNER <span class="eyebrow-line"></span></div>
+          <h1>Welcome back, <span> Nova 360 AI.</span><br />What can I help you <em>with today?</em></h1>
+          <p class="hero-subtitle">Think it. Ask it. Build it. Let's make something great.</p>
+
+          <div class="suggestion-grid">
+            <button class="suggestion-card" data-prompt="Help me brainstorm a unique project idea for my college hackathon.">
+              <span class="suggestion-icon violet">✧</span><span><strong>Brainstorm ideas</strong><small>Turn a blank page into a plan</small></span><span class="card-arrow">↗</span>
+            </button>
+            <button class="suggestion-card" data-prompt="Help me write a clear and professional email.">
+              <span class="suggestion-icon blue">✉</span><span><strong>Write something</strong><small>Emails, posts and documents</small></span><span class="card-arrow">↗</span>
+            </button>
+            <button class="suggestion-card" data-prompt="Explain a difficult coding concept to me step by step.">
+              <span class="suggestion-icon orange">⌘</span><span><strong>Learn to code</strong><small>Understand concepts with examples</small></span><span class="card-arrow">↗</span>
+            </button>
+            <button class="suggestion-card" data-prompt="Create a simple project plan with tasks and milestones.">
+              <span class="suggestion-icon green">▦</span><span><strong>Plan a project</strong><small>Organize tasks and next steps</small></span><span class="card-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="conversation hidden" id="conversation" aria-live="polite"></div>
+
+        <div class="composer-wrap">
+          <form class="composer" id="chatForm">
+            <textarea id="messageInput" rows="1" placeholder="Message Nova 360 AI..." aria-label="Write a message"></textarea>
+            <div class="composer-toolbar">
+              <div class="composer-left">
+                <label class="attach-button" title="Attach a file">＋ <span>Attach</span><input type="file" id="fileInput" hidden /></label>
+                <span id="fileName" class="file-name"></span>
+              </div>
+              <div class="composer-right">
+                <span class="composer-hint">Enter to send · Shift + Enter for new line</span>
+                <button type="button" class="voice-button" id="voiceButton" title="Voice input" aria-label="Voice input">♩</button>
+                <button type="submit" class="send-button" id="sendButton" aria-label="Send message">↑</button>
+              </div>
+            </div>
+          </form>
+          <p class="disclaimer">Nova 360 AI demo · Responses are simulated locally. Connect a backend to enable real AI replies.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
